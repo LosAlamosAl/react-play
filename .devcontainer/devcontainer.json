@@ -1,0 +1,23 @@
+{
+    "name": "React Play",
+    "dockerFile": "Dockerfile",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "dotfiles.repository": "https://github.com/losalamosal/dotfiles",
+                "dotfiles.targetPath": "~/dotfiles",
+                "dotfiles.installCommand": "~/dotfiles/install.sh",
+                "terminal.integrated.defaultProfile.linux": "zsh",
+                "editor.formatOnSave": true
+            },
+            "extensions": [
+                "esbenp.prettier-vscode"
+            ]
+        }
+    },
+    "mounts": [
+        "source=${env:HOME}${env:USERPROFILE}/.aws,target=/home/devboy/.aws,type=bind",
+        "source=${env:HOME}${env:USERPROFILE}/.vscode-zsh-hists/react-play,target=/home/devboy/.zsh_history,type=bind"
+    ],
+    "remoteUser": "devboy"
+}
